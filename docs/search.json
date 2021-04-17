@@ -3,17 +3,17 @@
     {
       "path": "about.html",
       "title": "About this blog",
-      "description": "Some additional details about the blog",
+      "description": "Olá! Esse é blog para facilitar o uso da linguagem R. ",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-04-17T12:02:22-03:00"
+      "last_modified": "2021-04-17T14:08:50-03:00"
     },
     {
       "path": "index.html",
       "title": "My Blog",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2021-04-17T12:02:23-03:00"
+      "last_modified": "2021-04-17T14:08:50-03:00"
     }
   ],
   "collections": ["posts/posts.json"]
