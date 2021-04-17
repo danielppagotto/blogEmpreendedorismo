@@ -1,11 +1,11 @@
 name: "blogEmpreendedorismo"
-title: "My Blog"
+title: "R sem trauma"
 description: |
-  My Blog
+  Postagens
 output_dir: "docs"
 navbar:
   right:
-    - text: "Home"
+    - text: "Postagens"
       href: index.html
     - text: "Sobre o autor"
       href: about.html

@@ -1,13 +1,10 @@
 ---
-title: "Welcome to My Blog"
+title: "Fase 1 - O primeiro contato"
 description: |
-  Welcome to our new blog, My Blog. We hope you enjoy 
-  reading what we have to say!
+  Vamos aquecer os motores! Esse é o primeiro passo para perder o medo do R! 
 author:
-  - name: Nora Jones 
-    url: https://example.com/norajones
-    affiliation: Spacely Sprockets
-    affiliation_url: https://example.com/spacelysprokets
+  - name: Daniel Pagotto
+    url: https://www.linkedin.com/in/daniel-do-prado-pagotto-bab62a50/
 date: 04-17-2021
 output:
   distill::distill_article:
@@ -15,7 +12,8 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE,
+                      results = "hide")
 
 # Learn more about creating blogs with Distill at:
 # https://rstudio.github.io/distill/blog.html
@@ -23,4 +21,29 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
+## Esse é o seu primeiro contato! 
 
+**O R é uma linguagem de programação, em outras palavras, é o intérprete que vai permitir você conversar com o computador**. Cada linha de script deve ser encarada como um comando que você fala: "R, executa tal coisa para mim?" (não, esquece de pedir por favor, seja educad@!). 
+
+Então, como primeiro passo, vou falar para você que **o R é calculadora**, vamos fazer operações básicas nele? Insira as operações na tela de script e rode (basta apertar "ctrl + enter" com o cursor de digitação sobre a linha de comando). 
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+5 + 4  # soma
+
+6 - 10 # subtração
+
+20 * 4 # multiplicação
+
+50 / 2 # divisão
+
+sqrt(25) # sqrt vem de SQuare RooT (raiz quadrada em inglês)
+
+5^2 # potenciação
+
+5 * (10 + (10/2)) # o R interpreta a ordem das operações igual você aprendeu lá na escola!
+                  # Você pode usar parênteses para controlar a ordem das operações
+
+```
+
+
+## 

@@ -1,19 +1,19 @@
 [
   {
     "path": "posts/welcome/",
-    "title": "Welcome to My Blog",
-    "description": "Welcome to our new blog, My Blog. We hope you enjoy \nreading what we have to say!",
+    "title": "Fase 1 - O primeiro contato",
+    "description": "Vamos aquecer os motores! Esse é o primeiro passo para perder o medo do R!",
     "author": [
       {
-        "name": "Nora Jones",
-        "url": "https://example.com/norajones"
+        "name": "Daniel Pagotto",
+        "url": "https://www.linkedin.com/in/daniel-do-prado-pagotto-bab62a50/"
       }
     ],
     "date": "2021-04-17",
     "categories": [],
-    "contents": "\r\n\r\n\r\n\r\n",
+    "contents": "\r\nEsse é o seu primeiro contato!\r\nO R é uma linguagem de programação, em outras palavras, é o intérprete que vai permitir você conversar com o computador. Cada linha de script deve ser encarada como um comando que você fala: “R, executa tal coisa para mim?” (não, esquece de pedir por favor, seja educad@!).\r\nEntão, como primeiro passo, vou falar para você que o R é calculadora, vamos fazer operações básicas nele? Insira as operações na tela de script e rode (basta apertar “ctrl + enter” com o cursor de digitação sobre a linha de comando).\r\n\r\n\r\n5 + 4  # soma\r\n\r\n6 - 10 # subtração\r\n\r\n20 * 4 # multiplicação\r\n\r\n50 / 2 # divisão\r\n\r\nsqrt(25) # sqrt vem de SQuare RooT (raiz quadrada em inglês)\r\n\r\n5^2 # potenciação\r\n\r\n5 * (10 + (10/2)) # o R interpreta a ordem das operações igual você aprendeu lá na escola!\r\n                  # Você pode usar parênteses para controlar a ordem das operações\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2021-04-17T11:14:04-03:00",
-    "input_file": {}
+    "last_modified": "2021-04-17T17:23:19-03:00",
+    "input_file": "welcome.utf8.md"
   }
 ]
