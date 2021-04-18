@@ -1477,7 +1477,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 
 <div class="d-article">
-<h2 id="esse-é-o-seu-primeiro-contato">Esse é o seu primeiro contato!</h2>
+<h2 id="o-primeiro-contato">O primeiro contato</h2>
+<h3 id="nessa-aula-falaremos-sobre">Nessa aula falaremos sobre</h3>
+<ol type="1">
+<li>O R como umas calculadora</li>
+<li>Atribuições de variáveis</li>
+<li>Vetores, Matrizes e Dataframes</li>
+</ol>
 <p><strong>O R é uma linguagem de programação, em outras palavras, é o intérprete que vai permitir você conversar com o computador</strong>. Cada linha de script deve ser encarada como um comando que você fala: “R, executa tal coisa para mim?” (não, esquece de pedir por favor, seja educad@!).</p>
 <p>Então, como primeiro passo, vou falar para você que <strong>o R é calculadora</strong>, vamos fazer operações básicas nele? Insira as operações na tela de script e rode (basta apertar “ctrl + enter” com o cursor de digitação sobre a linha de comando).</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -1499,8 +1505,201 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </code></pre>
 </div>
 </div>
-<h2 id="section"></h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h2 id="atribuição-de-variáveis">Atribuição de variáveis</h2>
+<p>Você pode guardar o valor em uma objeto para que possa usar em seguida. Veja bem, vou colocar meu peso em uma variável chamada “pesoDaniel”</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>pesoDaniel</span> <span class='op'>&lt;-</span> <span class='fl'>83</span>
+
+<span class='va'>pesoPosDieta</span> <span class='op'>&lt;-</span> <span class='va'>pesoDaniel</span> <span class='op'>-</span> <span class='fl'>4</span>    <span class='co'># Um dia chego lá!</span>
+</code></pre>
+</div>
+</div>
+<p>Note que posso atribuir valores de diferentes tipos, como numéricos, characteres (“letras”), fatores(“palavras”) e booleanos (verdadeiro ou falso)</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fl'>5</span> <span class='op'>+</span> <span class='fl'>5</span>
+
+<span class='va'>y</span> <span class='op'>&lt;-</span> <span class='fl'>10</span> <span class='op'>-</span> <span class='fl'>16</span>
+
+<span class='va'>a</span> <span class='op'>&lt;-</span> <span class='fl'>9</span>
+
+<span class='va'>soma</span> <span class='op'>&lt;-</span> <span class='va'>a</span> <span class='op'>+</span> <span class='va'>x</span>
+
+<span class='va'>nome</span> <span class='op'>&lt;-</span> <span class='st'>"daniel"</span> <span class='co'># isso é um factor</span>
+
+<span class='va'>certo</span> <span class='op'>&lt;-</span> <span class='cn'>TRUE</span>  <span class='co'># isso é um boolean</span>
+</code></pre>
+</div>
+</div>
+<p>Perceba que as atribuições que você gerou foram armazenadas e encontram-se no campo “Environment” ao lado direito do RStudio.</p>
+<p>Vamos criar um programinha que calcula o <a href="https://www.tuasaude.com/imc/">Índice de Massa Corpórea (IMC)</a>. Para quem não lembra, basta dividir o peso pelo quadrado da altura.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>pesoDaniel</span> <span class='op'>&lt;-</span> <span class='fl'>83</span>
+
+<span class='va'>alturaDaniel</span> <span class='op'>&lt;-</span> <span class='fl'>1.78</span>  
+
+<span class='va'>imcDaniel</span> <span class='op'>&lt;-</span> <span class='va'>pesoDaniel</span><span class='op'>/</span><span class='va'>alturaDaniel</span><span class='op'>**</span><span class='fl'>2</span>
+
+<span class='va'>imcDaniel</span>
+</code></pre>
+</div>
+<pre><code>[1] 26.19619</code></pre>
+</div>
+<table>
+<thead>
+<tr class="header">
+<th>IMC</th>
+<th>Situação</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt;16</td>
+<td>Subpeso Severo</td>
+</tr>
+<tr class="even">
+<td>16 a 19.9</td>
+<td>Subpeso</td>
+</tr>
+<tr class="odd">
+<td>20 a 24.9</td>
+<td>Normal</td>
+</tr>
+<tr class="even">
+<td>25 a 29.9</td>
+<td>Sobrepeso</td>
+</tr>
+<tr class="odd">
+<td>30 a 39.9</td>
+<td>Obeso</td>
+</tr>
+<tr class="even">
+<td>&gt;40</td>
+<td>Obeso Mórbido</td>
+</tr>
+</tbody>
+</table>
+<p>Agora vamos fazer o IMC desse pessoa aqui embaixo:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Nome</th>
+<th>Peso</th>
+<th>Altura</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Alice</td>
+<td>65</td>
+<td>1.60</td>
+</tr>
+<tr class="even">
+<td>Gilmar</td>
+<td>95</td>
+<td>1.78</td>
+</tr>
+<tr class="odd">
+<td>Cecília</td>
+<td>75</td>
+<td>1.80</td>
+</tr>
+<tr class="even">
+<td>Bianca</td>
+<td>77</td>
+<td>1.68</td>
+</tr>
+<tr class="odd">
+<td>Valentina</td>
+<td>80</td>
+<td>1.72</td>
+</tr>
+<tr class="even">
+<td>Augusto</td>
+<td>68</td>
+<td>1.65</td>
+</tr>
+</tbody>
+</table>
+<p>Aí você pode me perguntar: “Daniel, vou ter que fazer de um a um?”. Poderia, mas calma… Existem várias formas de resolver, mas para fins didáticos, vou apresentar uma estrutura de dados chamada <strong>vetor</strong>. O vetor é um conjunto de valores de um mesmo tipo (ex.: numérico, chacarcter). Dito isso, <strong>vamos criar um vetor de pesos e um vetor de alturas</strong>. Para criar um vetor, basta fazer como descrito abaixo.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># trabalhando com vetores</span>
+<span class='va'>pesos</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>56</span>, <span class='fl'>95</span>, <span class='fl'>65</span>, <span class='fl'>77</span>, <span class='fl'>80</span>, <span class='fl'>68</span><span class='op'>)</span>
+
+<span class='va'>alturas</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1.60</span>, <span class='fl'>1.78</span>, <span class='fl'>1.80</span>, <span class='fl'>1.68</span>, <span class='fl'>1.72</span>, <span class='fl'>1.65</span><span class='op'>)</span>
+
+<span class='va'>imc</span> <span class='op'>&lt;-</span> <span class='va'>pesos</span><span class='op'>/</span><span class='va'>alturas</span><span class='op'>**</span><span class='fl'>2</span>
+
+<span class='va'>imc</span> <span class='co'># aqui temos um vetor com o imc de todas pessoas</span>
+</code></pre>
+</div>
+<pre><code>[1] 21.87500 29.98359 20.06173 27.28175 27.04164 24.97704</code></pre>
+</div>
+<p>Vamos deixar isso mais bonitinho usando a função de arredondamento <strong>round</strong>? Nesse caso, coloquei no segundo argumento on número 2 para indicar que arredonde apenas duas casas decimais.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span><span class='op'>(</span><span class='va'>imc</span>, <span class='fl'>2</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 21.87 29.98 20.06 27.28 27.04 24.98</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>imc</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span><span class='op'>(</span><span class='va'>imc</span>, <span class='fl'>2</span><span class='op'>)</span> <span class='co'>#estou sobrescrevendo um vetor</span>
+<span class='co'>#arredondado sobre ele mesmo</span>
+
+<span class='va'>imc</span>
+</code></pre>
+</div>
+<pre><code>[1] 21.87 29.98 20.06 27.28 27.04 24.98</code></pre>
+</div>
+<p>Vamos organizar essa informações no formato tabular, embutindo em uma matriz. A matriz nada mais é do que vários vetores. Pensa no vetor como cada coluna de uma “tabela” e a matriz várias colunas (ou vetores no caso) lado a lado. Para colocar os vetores que criamos ali acima lado a lado usamos a função <strong>cbind</strong> (Bind vem de juntar e c vem de colunas - portanto, juntar colunas).</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>Matriz</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>cbind</a></span><span class='op'>(</span><span class='va'>pesos</span>,<span class='va'>alturas</span>,<span class='va'>imc</span><span class='op'>)</span>
+<span class='va'>Matriz</span>
+</code></pre>
+</div>
+<pre><code>     pesos alturas   imc
+[1,]    56    1.60 21.87
+[2,]    95    1.78 29.98
+[3,]    65    1.80 20.06
+[4,]    77    1.68 27.28
+[5,]    80    1.72 27.04
+[6,]    68    1.65 24.98</code></pre>
+</div>
+<p>Agora você pode estar perguntando: “Daniel, não dá para a gente colocar uma coluna com o nome correspondente e o status do IMC?”… Dá sim, para isso, vamos usar um novo tipo de objeto chamado <strong>dataframe</strong>. O dataframe é uma estrutura <strong>MUUUUUITO</strong> importante e tem uma estrutura de tabela. A diferença dela é que - diferente da matriz - cada coluna pode ter um tipo de dado distinto (texto, coluna, char). Em outros capítulos vamos aprender a fazer várias operações de manipulação de um dataframe.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://dplyr.tidyverse.org'>dplyr</a></span><span class='op'>)</span>
+<span class='va'>nomes</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Alice"</span>,<span class='st'>"Gilmar"</span>,<span class='st'>"Cecilia"</span>,<span class='st'>"Bianca"</span>,<span class='st'>"Valentina"</span>,<span class='st'>"Augusto"</span><span class='op'>)</span> <span class='co'># criando o vetor de nomes</span>
+
+<span class='va'>df_imc</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='va'>Matriz</span><span class='op'>)</span> <span class='co'># transformando a matriz no formato dataframe</span>
+
+<span class='va'>df_imc</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>cbind</a></span><span class='op'>(</span><span class='va'>nomes</span>,<span class='va'>df_imc</span><span class='op'>)</span>
+
+<span class='va'>df_imc</span> <span class='op'>&lt;-</span> <span class='va'>df_imc</span> <span class='op'>%&gt;%</span> 
+            <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>status <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/case_when.html'>case_when</a></span><span class='op'>(</span><span class='va'>imc</span> <span class='op'>&lt;</span> <span class='fl'>16</span> <span class='op'>~</span> <span class='st'>"Subpeso Severo"</span>,
+                                      <span class='va'>imc</span> <span class='op'>&gt;=</span> <span class='fl'>16</span> <span class='op'>&amp;</span> <span class='va'>imc</span> <span class='op'>&lt;</span> <span class='fl'>20</span> <span class='op'>~</span> <span class='st'>"Subpeso"</span>,
+                                      <span class='va'>imc</span> <span class='op'>&gt;=</span> <span class='fl'>20</span> <span class='op'>&amp;</span> <span class='va'>imc</span> <span class='op'>&lt;</span> <span class='fl'>25</span> <span class='op'>~</span> <span class='st'>"Normal"</span>,
+                                      <span class='va'>imc</span> <span class='op'>&gt;=</span> <span class='fl'>25</span> <span class='op'>&amp;</span> <span class='va'>imc</span> <span class='op'>&lt;</span> <span class='fl'>30</span> <span class='op'>~</span> <span class='st'>"Sobrepeso"</span>,
+                                      <span class='va'>imc</span> <span class='op'>&gt;=</span> <span class='fl'>30</span> <span class='op'>&amp;</span> <span class='va'>imc</span> <span class='op'>&lt;</span> <span class='fl'>40</span> <span class='op'>~</span> <span class='st'>"Obeso"</span>,
+                                      <span class='va'>imc</span> <span class='op'>&gt;=</span> <span class='fl'>40</span> <span class='op'>~</span> <span class='st'>"Obeso Mórbido"</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='va'>df_imc</span>
+</code></pre>
+</div>
+<pre><code>      nomes pesos alturas   imc    status
+1     Alice    56    1.60 21.87    Normal
+2    Gilmar    95    1.78 29.98 Sobrepeso
+3   Cecilia    65    1.80 20.06    Normal
+4    Bianca    77    1.68 27.28 Sobrepeso
+5 Valentina    80    1.72 27.04 Sobrepeso
+6   Augusto    68    1.65 24.98    Normal</code></pre>
+</div>
+<p>Para criar a coluna do status de imc, além de transformar a matriz, tive que transformá-la para um dataframe e aplicar duas funções chamadas mutate e case_when. Peço que por enquanto só rode o script. Teremos uma aula específica para a manipulação de dados. Nos vemos lá! ;)</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
