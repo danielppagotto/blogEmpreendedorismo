@@ -1,9 +1,10 @@
 name: "blogEmpreendedorismo"
 title: "R sem trauma"
-description: "Teste"
+description: |
   Postagens
 output_dir: "docs"
 navbar:
+  logo: logo.png
   right:
     - text: "Postagens"
       href: index.html
